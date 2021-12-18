@@ -1,0 +1,208 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Phoenix
+ */
+
+//$action_color = get_theme_mod('phoenix_action_color');
+
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<?php wp_head(); ?>
+
+	<allow-navigation href="https://*youtube.com/*">
+</head>
+
+<body <?php body_class(); ?>>
+<?php
+gtm_body();
+wp_body_open();
+?>
+<div id="page" class="site <?php echo get_theme_mod('phoenix_header_theme') . '-header'; ?>">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e(
+     'Skip to content',
+     'phoenix'
+ ); ?></a>
+
+	<header id="masthead" class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 mobile-show">
+
+					<div class="mobile-menu-trigger">
+
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g transform="translate(1 2)" fill="#454647" fill-rule="evenodd"><rect width="16" height="2" rx="1"></rect><rect y="6" width="16" height="2" rx="1"></rect><rect y="12" width="16" height="2" rx="1"></rect></g></svg>
+
+					</div>
+
+				</div>
+
+				<div id="site-logo-container" class="col-md-3">
+
+					<div class="site-branding">
+						<div class="inner">
+
+							<?php
+								$logo = get_theme_mod('custom_logo');
+								$image = wp_get_attachment_image_src($logo , 'full');
+								$image_url = $image[0];
+							?>
+							<a href="/" class="custom-logo-link" rel="home">
+								<img src="<?php echo get_theme_mod('phoenix_light_logo'); ?>" class="custom-logo custom-logo-light">
+								<img src="<?php echo $image_url; ?>" class="custom-logo">
+							</a>
+
+						</div>
+					</div><!-- .site-branding -->
+
+				</div>
+
+				<div id="header-mda-container" class="col-md-9 col-xs-12">
+
+					<div class="phone-header">
+
+						<?php
+      						$phone_number = "888.442.5196";
+      						// check that the quote plugin is activated
+      						if (function_exists('quote_phone_number')) {
+          						$phone_number = quote_phone_number(
+					              	null,
+					              	false,
+					              	true,
+					              	quote_is_paid_traffic()
+          						);
+      						}
+      					?>
+
+							<a href="tel:<?php echo $phone_number; ?>" class="action-color">
+								<svg height="18" width="18" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.5,15.77C4.5,18-3.35,3.19,1.56.69L3,0,5.38,4.55,4,5.23C2.5,6,5.58,12,7.1,11.23l1.4-.68,2.4,4.53ZM8.42,6.83l2,.58a2,2,0,0,0-.16-1.55A2.13,2.13,0,0,0,9,4.86Zm1.23-4a4.27,4.27,0,0,1,2.56,2A4.08,4.08,0,0,1,12.55,8l-1.22-.35a2.92,2.92,0,0,0-.24-2.26A3,3,0,0,0,9.29,4ZM10.3.67a6.51,6.51,0,0,1,3.91,3.1,6.3,6.3,0,0,1,.52,4.9L13.5,8.3a5.06,5.06,0,0,0-.41-3.92A5.29,5.29,0,0,0,10,1.89Z" fill-rule="evenodd" transform="translate(-0.01)"></path>
+								</svg>
+
+								<span class="mobile-hide"><?php echo $phone_number; ?></span>
+							</a>
+					</div>
+
+					<?php if (get_field('hide_mda') !== 'yes'): ?>
+					<div class="header-mda">
+			            <div class="quote-new-360-mda">
+			              	<section class="responsive-mda mda">
+			                	<div class="mda-contents">
+			                		<label>Free <?php echo get_field(
+                         'auto_synonym',
+                         'option'
+                     ); ?> Insurance Comparison</label>
+
+			                  		<?php echo quote_display_mda(
+                           'sticky-header',
+                           get_field('mda_submit_text', 'option') ?? 'Get Free Quotes'
+                       ); ?>
+
+			                	</div>
+			              	</section>
+			            </div>
+					</div>
+					<?php endif; ?>
+
+					<nav id="site-navigation" class="main-navigation mobile-hide">
+
+						<?php
+							wp_nav_menu([
+					          	'theme_location' => 'menu-1',
+					          	'menu_id' => 'primary-menu',
+					      	]);
+					    ?>
+
+					</nav><!-- #site-navigation -->
+
+				</div>
+			</div>
+		</div>
+
+		<div class="mda-background"></div>
+	</header><!-- #masthead -->
+
+	<nav id="mobile-navigation" class="mobile-navigation">
+		<div>
+			Hello
+		</div>
+		<div class="header">
+			<div class="container">
+				<div class="mobile-menu-close">
+
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+					    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Navigation/Close" fill-rule="nonzero" fill="#454647">
+					            <g id="noun_1191733" transform="translate(1.000000, 1.000000)">
+					                <path d="M15.0034943,0.00137329102 C14.7515315,0.00137329102 14.4870559,0.100179051 14.3089905,0.278469213 L8,6.59329224 L1.69302368,0.278469213 C1.48114014,0.0622406006 1.24736023,0.00137329102 1.00271606,0.00137329102 C0.758071899,0.00137329102 0.484268188,0.0538482666 0.281448364,0.278469213 C0.07862854,0.50309016 0.0029296875,0.713104248 0.00215148926,0.998703003 C0.00137329102,1.28430176 0.0848999023,1.51036072 0.281448364,1.69076538 L6.5921936,8 L0.281448364,14.3039093 C0.0585470305,14.5268438 0.00215148926,14.7131958 0.00215148926,14.9993744 C0.00215148926,15.2253876 0.106369019,15.5269318 0.281448364,15.6928406 C0.45652771,15.8587494 0.675994873,15.999176 1.00271606,16.0006714 C1.32943726,16.0021667 1.482178,15.9328358 1.72213745,15.6928406 L8,9.42210388 C12.010809,13.4300695 14.1080482,15.5203151 14.2917175,15.6928406 C14.5672216,15.9516288 14.7953949,16.0006714 15.0034943,16.0006714 C15.2115936,16.0006714 15.4894674,15.9315491 15.7191905,15.6928406 C15.9489136,15.4541321 16.003006,15.2260284 16.003006,14.9993744 C16.003006,14.7727203 15.9664238,14.5663041 15.7191905,14.3039093 C15.5543683,14.1289794 13.4507669,12.0276763 9.40838623,8 L15.7191905,1.69076538 C15.8968264,1.51204422 16.0042167,1.25070371 16.0033264,0.998703003 C16.0024361,0.746702291 15.8980848,0.455930359 15.7191905,0.278469213 C15.5411251,0.100179051 15.255457,0.00137329102 15.0034943,0.00137329102 Z" id="Shape"></path>
+					            </g>
+					        </g>
+					    </g>
+					</svg>
+
+				</div>
+
+				<div class="site-branding">
+
+					<?php the_custom_logo(); ?>
+
+				</div>
+
+				<div class="col-xs-10"></div>
+
+				<div class="col-xs-2">
+
+					<div class="phone-header">
+
+						<?php
+      						$phone_number = "888.442.5196";
+      						// check that the quote plugin is activated
+      						if (function_exists('quote_phone_number')) {
+          						$phone_number = quote_phone_number(
+					              	null,
+					              	false,
+					              	true,
+					              	quote_is_paid_traffic()
+          						);
+      						}
+      					?>
+						<a href="tel:<?php echo $phone_number; ?>">
+							<svg height="18" width="18" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9.5,15.77C4.5,18-3.35,3.19,1.56.69L3,0,5.38,4.55,4,5.23C2.5,6,5.58,12,7.1,11.23l1.4-.68,2.4,4.53ZM8.42,6.83l2,.58a2,2,0,0,0-.16-1.55A2.13,2.13,0,0,0,9,4.86Zm1.23-4a4.27,4.27,0,0,1,2.56,2A4.08,4.08,0,0,1,12.55,8l-1.22-.35a2.92,2.92,0,0,0-.24-2.26A3,3,0,0,0,9.29,4ZM10.3.67a6.51,6.51,0,0,1,3.91,3.1,6.3,6.3,0,0,1,.52,4.9L13.5,8.3a5.06,5.06,0,0,0-.41-3.92A5.29,5.29,0,0,0,10,1.89Z" fill-rule="evenodd" transform="translate(-0.01)"></path>
+							</svg>
+
+							<span class="mobile-hide"><?php echo $phone_number; ?></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container mobile-menu">
+			<div class="row">
+				<div class="col-xs-12">
+
+					<?php
+						wp_nav_menu([
+				         	'theme_location' => 'menu-1',
+				         	'menu_id' => 'primary-menu',
+	     				]);
+     				?>
+
+				</div>
+			</div>
+		</div>
+
+	</nav><!-- #mobile-navigation -->

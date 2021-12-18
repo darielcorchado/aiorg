@@ -1,0 +1,69 @@
+@mixin transition($property...) {
+	-webkit-transition: $property;
+	-moz-transition:    $property;
+    -o-transition:      $property;
+	transition:         $property;
+}
+
+@mixin transform($property) {
+	-moz-transform:    $property;
+	-o-transform:      $property;
+	-ms-transform:     $property;
+	-webkit-transform: $property;
+	transform:         $property;
+}
+
+@mixin borderRadius($topRight, $bottomRight, $topLeft, $bottomLeft) {
+	border-top-right-radius: $topRight;
+	border-bottom-right-radius: $bottomRight;
+	border-top-left-radius: $topLeft;
+	border-bottom-left-radius: $bottomLeft;
+}
+
+@mixin boxShadow($property) {
+	box-shadow: $property;
+	-webkit-box-shadow: $property;
+}
+
+@mixin animate($property) {
+	-webkit-animation: $property;
+    -moz-animation: $property;
+    -o-animation: $property;
+    animation: $property;
+}
+
+@mixin displayFlex() {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin alignItems() {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+@mixin flexDirection($value) {
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}
+
+@mixin flexJustifyContent($value) {
+	-webkit-justify-content: $value;
+	justify-content: $value;
+}
+
+@mixin flexAlignItems($value) {
+	-webkit-align-items: $value;
+  	align-items: $value;
+}
+
+@mixin pseudoCount($count, $gap) {
+	-moz-column-count: $count;
+	-moz-column-gap: $gap;
+	-webkit-column-count: $count;
+	-webkit-column-gap: $gap;
+	column-count: $count;
+	column-gap: $gap;
+}

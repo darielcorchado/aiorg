@@ -1,0 +1,460 @@
+body {
+	&.single-expert {
+		main {
+			.main-content {
+				h2 {
+
+					&::before {
+						content: '';
+						display: block;
+						width: 90px;
+						height: 2px;
+						margin: 40px 0;
+						background: #dedede;
+					}
+				}
+			}
+		}
+	}
+}
+
+main.page {
+	.hero {
+		h1 {
+			font-weight: 700;
+		}
+
+		h2.subhead {
+			font-weight: 400;
+		}
+	}
+
+	.main-content {
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+main {
+	.main-content {
+		h2 {
+			&::before {
+				content: '';
+				display: block;
+				width: 90px;
+				height: 3px;
+				margin: 40px 0;
+				background: #dedede;
+			}
+
+			&:first-child {
+				margin-top: 0;
+
+				&::before {
+					margin: 0 0 40px 0;
+				}
+			}
+
+			&[style*="text-align:center"], &[style*="text-align: center"] {
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		.mda-contents {
+			h2 {
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.category-post {
+	margin-bottom: 4.5rem;
+
+	h2 {
+		margin-bottom: 16px;
+
+		a {
+			font-weight: 600;
+		}
+
+		& + a {
+			border: none !important;
+		}
+	}
+
+	.featured-image {
+		display: inline-block;
+		height: 180px;
+		width: 270px;
+		margin-top: 6px;
+
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@include borderRadius(3px, 3px, 3px, 3px);
+
+		&.default-image {
+			background-size: contain;
+		}
+	}
+
+	.excerpt {
+		float: right;
+		width: calc(100% - 300px);
+	}
+}
+
+.category-pagination {
+	width: 100%;
+	text-align: left;
+
+	.page {
+		display: inline-block;
+		color: #aaa;
+		text-align: center;
+		height: 38px;
+		width: 38px;
+		padding: 7px;
+		margin: 4px;
+		border: 1px solid #dedede;
+
+		@include transition(all 0.2s ease);
+		@include borderRadius(999px, 999px, 999px, 999px);
+
+		&:hover, &.active {
+			color: #fff;
+		}
+	}
+}
+
+.press-box {
+	.pb-top-border {
+		border-top: 2px solid #dedede;
+		margin: 0 -15px;
+	}
+
+	.press-box-post {
+		border-bottom: 2px solid #dedede;
+		padding: 24px 0;
+
+		.press-box-description {
+			padding-left: 0;
+
+			h3, h5 {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+
+			h3 a {
+				color: inherit;
+				font-weight: 700;
+			}
+		}
+
+		.press-box-image {
+			text-align: right;
+			padding-right: 0;
+
+			@media(max-width: 992px) {
+				text-align: center;
+
+				img {
+					max-width: 30%;
+				}
+			}
+		}
+	}
+}
+
+body.page-template-fb-landing {
+	header .mobile-menu-trigger {
+		display: none;
+	}
+	main#primary {
+		padding-bottom: 0;
+
+		h2.subhead {
+			margin-bottom: 0;
+		}
+
+		#mdatop .quote-new-360-mda {
+			margin: 4rem 0;
+
+			.responsive-mda {
+				.mda-contents {
+					padding: 0;
+					margin: 0;
+					background-color: transparent;
+					background-image: none;
+
+					h2 {
+						display: none;
+					}
+
+					p {
+						&.secured-mda {
+										color: #fff;
+										opacity: 0.75;
+
+										&::before {
+											background-image: url(/wp-content/themes/aiorg/img/shield-big-white.svg);
+										}
+								}
+					}
+				}
+			}
+		}
+		img.as-seen {
+			margin: 0 auto;
+		}
+	}
+	#steps-info {
+		background-image: linear-gradient(180deg, #fff 0%, #e8eefc 100%);
+
+		.drivers-save {
+			text-align: center;
+
+			h2 {
+				font-size: 38px;
+				line-height: 1.2;
+			}
+
+			p {
+				color: #898f99;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	#blurbs {
+		margin-top: 4rem;
+
+		.blurb-column {
+			margin: 0 15px 30px 15px;
+
+				.blurb {
+					overflow: hidden;
+					padding: 44px 0;
+					background-color: #fff;
+
+			@include borderRadius(10px, 10px, 10px, 10px);
+			@include boxShadow(0 6px 54px 17px rgba(0,0,0,0.04));
+
+					.blurb-content {
+							position: relative;
+							max-width: 550px;
+							margin: 0 auto;
+							text-align: center;
+
+							.blurb-image {
+								display: inline-block;
+								height: 90px;
+								width: 90px;
+								line-height: 0;
+								padding-top: 12px;
+								margin-bottom: 10px;
+
+					@include borderRadius(999px, 999px, 999px, 999px);
+
+								img {
+									width: 48px;
+								}
+						}
+
+							.blurb-container {
+								h4 {
+									display: inline-block;
+										font-size: 15px;
+										font-weight: 900;
+										letter-spacing: 1px;
+										line-height: 1.4em;
+										text-transform: uppercase;
+								}
+
+								.blurb-description {
+									margin-top: 4px;
+
+										p {
+											color: #898f99;
+											font-size: 24px;
+											font-weight: 400;
+											line-height: 1.6em;
+											padding-bottom: 0;
+											margin-bottom: 0;
+										}
+								}
+							}
+					}
+			}
+		}
+		.divider-text {
+			padding-bottom: 4rem;
+		}
+	}
+	#mdabottom {
+		display: none;
+	}
+	.site-footer #footer-widgets {
+		display: none;
+	}
+}
+
+body {
+	.main-content {
+		.agent-dir {
+			display: flex;
+			flex-wrap: wrap;
+
+			.agent-cities {
+				width: 60%;
+				overflow: hidden;
+				padding-right: 20px;
+
+				.agent-titles {
+					text-align: right;
+				}
+
+				.agent {
+					padding: 20px;
+					&:nth-child(even) {
+						background-color: #ededed;
+					}
+				}
+
+				.city-columns {
+					display: grid;
+  					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+
+			.agent-extras {
+				width: 40%;
+			}
+		}
+
+		.vehicle-quote-summary {
+			margin: 70px 0;
+			display: flex;
+			flex-wrap: wrap;
+
+			.quote-column {
+				width: 45%;
+				margin-right: 30px;
+
+				&.right {
+					margin-top: 87px;
+				}
+
+				table.quote-table {
+					border-top: 1px solid lighten(#ccc, 10%);
+					display: inline-table !important;
+
+					th {
+						padding: 20px;
+					}
+				}
+
+				.quote-segment {
+					border: 1px solid #ccc;
+					padding: 10px 20px;
+					margin-bottom: 20px;
+
+					p.price {
+						font-weight: bold;
+						font-size: 1.5em;
+					}
+
+					.jump-container {
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		.vehicle-quotes {
+			display: flex;
+			flex-wrap: wrap;
+
+			a {
+				border-bottom: none;
+
+				&:hover {
+					border-bottom: none;
+				}
+			}
+
+			.quote {
+				width: 30.7%;
+				text-align: center;
+				margin-right: 20px;
+
+				.img {
+					text-align: center;
+					border: 1px solid #ccc;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+
+					b {
+						color: #454647;
+					}
+
+					&:hover {
+						border: 1px solid #454647;
+					}
+				}
+
+				a {
+					&:hover {
+						color: #454647;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	body {
+		.main-content {
+			.vehicle-quote-summary {
+
+				.quote-column {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.category-post {
+		.featured-image {
+			display: block;
+			width: 100%;
+			max-width: 270px;
+			margin: 6px auto 1.5rem auto;
+		}
+
+		.excerpt {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	main .car-terrain {
+		background-image: none;
+	}
+
+	body #mdabottom .quote-new-360-mda .responsive-mda .mda-contents {
+		background-image: linear-gradient(180deg,#123388 0%,rgba(26,83,91,.7) 100%) !important;
+	}
+}

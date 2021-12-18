@@ -1,0 +1,240 @@
+.breadcrumb-wrap{
+	margin-top: 80px;
+	margin-bottom: -65px;
+	font-size: 14px;
+	&.no-mt{
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+	&.fci{
+		margin-top: -30px;
+	}
+}
+@media (max-width: 700px) {
+	.breadcrumb-wrap{
+		margin-bottom: -55px;
+		&.fci{
+			margin-top: -55px;
+		}
+	}
+}
+
+.single-expert{
+	.breadcrumb-wrap{
+		margin-top: -30px;
+		margin-bottom: 10px;
+	}
+}
+.hero {
+	padding-top: 10rem;
+
+	background-image: linear-gradient(180deg, #123388 0%, rgba(26,83,91,0.7) 100%), url(/wp-content/themes/aiorg/img/hero-default.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	.wave {
+    &.no-mda { margin-top: 0; }
+		position: relative;
+		height: 100px;
+		width: 100%;
+		min-width: 1000px;
+		margin: -16rem 0 4rem 0;
+
+		background-image: url(/wp-content/themes/aiorg/img/hero-wave.svg);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+.roundedTable {
+	position: relative;
+	font-size: 16px;
+	line-height: 1.35;
+	width: calc(100% - 1px) !important;
+	margin-top: 18px !important;
+
+	caption {
+		font-size: 14px !important;
+		margin: 6px 0 1px 0 !important;
+	}
+
+	thead {
+		tr {
+			th {
+				color: #fff;
+				font-weight: 600;
+				min-width: 180px;
+				padding: 16px;
+				text-align: left;
+				border: none;
+
+				@include transition(background-color 0.2s ease);
+
+			    &.sorting {
+				    &:hover {
+				    	background-color: #454647;
+				    }
+			    }
+
+			    &.sorting_asc, &.sorting_desc {
+				    background-color: #454647;
+			    }
+			}
+		}
+	}
+
+	tbody, tbody.row-hover {
+		border: 1px solid #eee;
+		border-top: none;
+
+		tr {
+			&:nth-of-type(even) {
+				background-color: #f9f9f9;
+
+				td {
+					background-color: #f9f9f9 !important;
+				}
+
+				&:last-of-type {
+					td {
+						background-color: #f9f9f9 !important;
+					}
+				}
+			}
+
+			&:hover {
+				td {
+					background-color: #f3f3f3 !important;
+				}
+
+				&:last-of-type {
+					td {
+						background-color: #f3f3f3 !important;
+					}
+				}
+			}
+
+			td {
+				padding: 16px;
+				vertical-align: middle;
+				text-align: left;
+				border: none;
+			}
+		}
+	}
+
+	tfoot {
+		tr {
+			td {
+				padding: 1rem 0 16px 0;
+			}
+		}
+	}
+}
+
+.social-share {
+	position: fixed;
+	z-index: 999;
+	display: none;
+	top: 50%;
+	left: 0;
+	margin: -73px 0 0 0;
+
+	@include transform(translate3d(8px, 0, 0));
+	@include transition(transform 0.2s cubic-bezier(0.83, 0, 0.17, 1));
+
+	&.social {
+		.link {
+			display: block;
+			margin: 8px 0;
+		}
+	}
+}
+
+.related-posts {
+	margin-top: 3rem;
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	.related-group {
+		margin-top: -1px;
+
+		h4 {
+			position: relative;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 400;
+			padding: 2rem;
+			margin: 0;
+			border-top: 1px solid #dedede;
+			border-bottom: 1px solid #dedede;
+
+			@include transition(color 0.2s ease);
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 2rem;
+				height: 28px;
+				width: 28px;
+				margin-top: -14px;
+
+				background-color: #f1f2f6;
+				background-image: url(/wp-content/themes/aiorg/img/related-post-arrow.svg);
+				background-size: 18px;
+				background-position: center;
+				background-repeat: no-repeat;
+
+				@include transform(rotate(-90deg));
+				@include borderRadius(999px, 999px, 999px, 999px);
+			}
+
+			&.group-active {
+				&::after {
+					@include transform(rotate(0deg));
+				}
+
+				& + .related-posts {
+					display: block;
+				}
+			}
+		}
+
+		.related-posts {
+			display: none;
+			padding: 2rem;
+			margin-top: 0;
+
+			a {
+				display: inline-block;
+				margin-bottom: 0.5rem;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.social-share {
+		display: none;
+		top: auto;
+	    bottom: 66px;
+	    left: auto;
+	    right: 0;
+	    margin: 0;
+
+		@include transform(translate3d(50px, 0, 0));
+
+		&.show-social-share {
+			@include transform(translate3d(-29px, 0, 0));
+		}
+	}
+}

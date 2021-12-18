@@ -1,0 +1,47 @@
+.answer-wrap{
+	margin-top: 10rem;
+
+	.answer-tags {
+		margin: 2rem 0;
+
+		.answer-tag{
+			font-size: 14px;
+	    	padding: 4px 8px;
+			background-color: #e6eaf1;
+			margin-right: 10px;
+
+			@include transition(color 0.2s ease, background-color 0.2s ease);
+			@include borderRadius(3px, 3px, 3px, 3px);
+
+		    &:hover {
+		    	color: #fff;
+		    	background-color: #1a558d;
+		    	border: none;
+		    }
+		}
+	}
+	.answer-info{
+		font-style: italic;
+		font-size: 14px;
+	}
+}
+
+.nav-sub-wrapper {
+	max-width: 830px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.nav-sub {
+		ul {
+			padding: 0;
+			margin-left: 0;
+			margin-right: 0;
+
+			li {
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
